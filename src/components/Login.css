@@ -1,0 +1,68 @@
+.login-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .logo-icon {
+    font-size: 2.5rem;
+    color: var(--ion-color-primary);
+    background: rgba(var(--ion-color-primary-rgb), 0.1);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+  
+  .logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+    margin: 0;
+  }
+  
+  ion-card {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-card-header {
+    padding-top: 30px;
+  }
+  
+  ion-card-title h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ion-color-dark);
+  }
+  
+  ion-card-title p {
+    font-size: 16px;
+    color: var(--ion-color-medium);
+    margin-top: 0;
+  }
+  
+  .google-button {
+    --border-radius: 8px;
+    margin-top: 20px;
+    --background: #DB4437;
+    --background-hover: #C1351E;
+    height: 48px;
+    font-weight: 500;
+  }
+  
