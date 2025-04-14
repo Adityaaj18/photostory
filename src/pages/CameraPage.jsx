@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { 
   IonPage, 
   IonHeader, 
@@ -22,8 +23,9 @@ import {
   IonToast
 } from '@ionic/react';
 import { camera, settings, locationOutline, imagesOutline } from 'ionicons/icons';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Geolocation } from '@capacitor/geolocation';
+import { Capacitor } from '@capacitor/core';
 import './CameraPage.css'; // Create this CSS file
 
 const CameraPage = ({ homeCurrency }) => {
@@ -63,11 +65,15 @@ const CameraPage = ({ homeCurrency }) => {
       const image = await Camera.getPhoto({
         quality: 90,
         allowEditing: false,
-        resultType: CameraResultType.Uri
+        resultType: CameraResultType.Uri,
+        source: CameraSource.Camera
       });
+      
       
       // Navigate to result page with location and photo data
       history.push(`/result/${latitude}/${longitude}/${encodeURIComponent(image.webPath)}`);
+
+      console.log('Running on:', Capacitor.getPlatform());
       
     } catch (err) {
       console.error('Error:', err);
